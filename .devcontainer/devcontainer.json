@@ -1,0 +1,50 @@
+{
+	"name": "Python3.12 aioimaplib",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/pipx-package:1": {},
+		"ghcr.io/devcontainers-contrib/features/poetry:2": {},
+		"ghcr.io/devcontainers-contrib/features/tox:2": {}
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {"vscode": {
+		"settings": {
+			"python.venvPath": "./.venv/bin/python",
+			"python.defaultInterpreterPath": "./.venv/bin/python3.11",
+			"files.encoding": "utf8",
+			"search.exclude": {
+				"**/venv": true,
+				"**/.venv": true
+			},
+			"files.watcherExclude": {
+				"**/.git/objects/**": true,
+				"**/.git/subtree-cache/**": true,
+				"**/node_modules/*/**": true,
+				"**/.hg/store/**": true,
+				"**/*.egg-info": true
+			},
+			"files.exclude": {
+				"**/.git": true,
+				"**/.svn": true,
+				"**/.hg": true,
+				"**/CVS": true,
+				"**/.DS_Store": true,
+				"**/Thumbs.db": true,
+				"**/*.egg-info": true
+			},
+			"python.analysis.diagnosticMode": "workspace",
+			"python.analysis.typeCheckingMode": "strict",
+			"python.analysis.diagnosticSeverityOverrides": {
+				"reportUnnecessaryIsInstance":"none"
+			}
+		},
+		"extensions":[
+			"ms-python.python",
+			"ms-python.vscode-pylance",
+			"ms-python.black-formatter",
+			"charliermarsh.ruff"
+		]
+	}}
+}
